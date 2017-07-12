@@ -11,8 +11,8 @@ module Haikunator
 
     def build(token_range, delimiter)
       sections = [
-        nouns[random_seed % nouns.length],
         adjectives[random_seed % adjectives.length],
+        nouns[random_seed % nouns.length],
         token(token_range)
       ]
 
@@ -27,7 +27,7 @@ module Haikunator
       SecureRandom.random_number(range) if range > 0
     end
 
-    def adjectives
+    def nouns
       %w(
         pool car can mtn spkr fan dry cord wire sun desk
         head ice wtr trip flip surf sand sea tv palm fire
@@ -35,7 +35,7 @@ module Haikunator
       )
     end
 
-    def nouns
+    def adjectives
       %w(
         cool lit poor sad fun sick meh ok dope chill lit
         good nice neat fun gnar eww boom fast fizz fun glee
